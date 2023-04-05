@@ -15,11 +15,15 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # On va chercher l'utilisateur et sa todo
-    response_url = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
+    response_url = requests.get(
+        f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+        )
     response_dict = response_url.json()
     employee_name = response_dict.get("name")
 
-    response_url = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
+    response_url = requests.get(
+        f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+        )
     response_dict = response_url.json()
 
     # On va compter le nombre de tâches faites et finies
