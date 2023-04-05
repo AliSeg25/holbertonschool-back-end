@@ -9,10 +9,9 @@ import sys
 
 def Return_employer_todolist(employee_id):
     # On va chercher l'utilisateur et sa todo
-    #response_url = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
-    #response_dict = response_url.json()
-    response_dict = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos").json()
-    #print(response_dict)
+
+    response_dict = requests.get(f"https://jsonplaceholder.typicode.com/users/\
+    {employee_id}/todos").json()
 
     # On va compter le nombre de task fait et fini
     count, total = 0, 0
@@ -23,10 +22,8 @@ def Return_employer_todolist(employee_id):
             count += 1
             completed_tasks.append(task['title'])
 
-    employee_name = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}").json().get("name")
+    employee_name = requests.get(f"https://jsonplaceholder.typicode.com/users/\
+    {employee_id}").json().get("name")
     print(f"Employee {employee_name} is done with tasks({count}/{total}):")
     for task in completed_tasks:
         print("\t " + task)
-    
-
-Return_employer_todolist(1)
