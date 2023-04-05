@@ -23,7 +23,7 @@ if __name__ == "__main__":
     response_url = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
     response_dict = response_url.json()
 
-    # On va compter le nombre de tâches faites et finies
+
     tasks = []
     for task in response_dict:
         tasks.append([employee_id, employee_name, task['completed'], task['title']])
