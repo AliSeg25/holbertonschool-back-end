@@ -7,9 +7,11 @@ import requests
 import sys
 
 
-def Return_employer_todolist(employee_id):
-    # On va chercher l'utilisateur et sa todo
+if __name__ == "__main__":
+    # Récupérer l'ID de l'employé à partir de la ligne de commande
+    employee_id = sys.argv[1]
 
+    # On va chercher l'utilisateur et sa todo
     response_dict = requests.get(f"https://jsonplaceholder.typicode.com/users/\
     {employee_id}/todos").json()
 
