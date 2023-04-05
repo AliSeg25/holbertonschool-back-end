@@ -4,8 +4,10 @@ Using what you did in the task #0, extend your Python script to export data in t
 """
 
 import csv
+import sys
 import requests
 import sys
+
 
 
 if __name__ == "__main__":
